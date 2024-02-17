@@ -15,9 +15,9 @@ app.use('/users',authRouter);
 app.use('/posts',postRouter);
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.send('Welcome To Social App page');
-  });
+// app.get('/', (req, res) => {
+//     res.send('Welcome To Social App page');
+//   });
 
   const PORT = process.env.PORT || 3000;
 app.listen(PORT,async() => {
