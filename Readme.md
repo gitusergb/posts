@@ -98,7 +98,8 @@ Only logged in users can do any kind of CRUD operations.
 Responses:
 200: {"msg":"Post added"}
 400: {"error":<error message should be sent>}
- <br>
+<br>
+
 
 ***GET /posts/get <Restricted Route>***
 A user has to be authenticated to access this route.'
