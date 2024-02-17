@@ -9,7 +9,7 @@ exports.register = async (req, res) => {
 
         bcrypt.hash(password,5,async(err,hash)=>{
            if(err){
-                   res.status(200).send({"error":err})
+                   res.status(400).send({"error":err})
            }else{
                const user=new User({name,email,gender,password:hash})
                await user.save()
