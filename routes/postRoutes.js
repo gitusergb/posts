@@ -9,7 +9,7 @@ const  postRouter = express.Router();
  postRouter.post('/add', authMiddleware,addPost);
 
 // Update a post
- postRouter.put('/update/:postID', authMiddleware,updatePost);
+ postRouter.patch('/update/:postID', authMiddleware,updatePost);
 
 // Delete a post
  postRouter.delete('/delete/:postID', authMiddleware,deletePost);
