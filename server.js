@@ -13,6 +13,8 @@ app.use(express.json());
 app.use(cors())
 app.use('/users',authRouter);
 app.use('/posts',postRouter);
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
     res.send('Welcome To Social App page');
   });
