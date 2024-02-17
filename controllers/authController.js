@@ -39,3 +39,14 @@ exports.login = async (req, res) => {
       res.status(400).json({ error: err });
     }
 };
+
+
+// GET /users/logout
+exports.logoutUser = async (req, res) => {
+  const token = req.headers.authorization?.split(" ")[1];
+  try {
+    res.status(200).json({ msg: 'User has been logged out' });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
