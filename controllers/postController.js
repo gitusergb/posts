@@ -4,12 +4,31 @@ const Post = require('../models/post');
 
 // Get posts of logged-in user
 const getPosts = async (req, res) => {
+  const { page = 1, limit = 4 } = req.query;
+  
+  const pageNumber = parseInt(page);
+  const limitNumber = parseInt(limit);
+
+    // Calculate start and end indices based on page and limit
+    const startIndex = (pageNumber - 1) * limitNumber;
+    const endIndex = pageNumber * limitNumber;
+  
   try { 
     const posts = await Post.find({userID:req.body.userID})
-    res.status(200).send(posts);
+  const paginatedPosts = posts.slice(startIndex, endIndex);
+  //res.json(paginatedPosts);
+    // res.status(200).send(posts);
+    res.status(200).send(paginatedPosts);
       } catch (error) {
         res.status(400).send({ error: error.message });
       }
+
+
+
+
+
+
+
 
 };
 

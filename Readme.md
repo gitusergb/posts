@@ -52,6 +52,8 @@ While registering it accepts the following details.
 - => At least one number
 - => At least a special character
 - => The length of password should be at least 8 characters long
+
+
  <br>
 
 - If a user already exist, a new user with same email cannot register, 
