@@ -4,7 +4,7 @@ const Post = require('../models/post');
 
 // Get posts of logged-in user
 const getPosts = async (req, res) => {
-  const { page = 1, limit = 4 } = req.query;
+  const { page,limit } = req.query;
   
   const pageNumber = parseInt(page);
   const limitNumber = parseInt(limit);
